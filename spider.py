@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from requests.exceptions import ConnectionError, HTTPError
+from requests.exceptions import ConnectionError, HTTPError, InvalidURL
 from urllib3.exceptions import NewConnectionError, LocationParseError
 import requests
 import re
@@ -17,7 +17,7 @@ def get_links_from():
 			flag = 1
 			response = requests.get(f"https://{url}/", timeout=2)
 			response.raise_for_status()
-		except (ConnectionError, NewConnectionError, LocationParseError, HTTPError):
+		except (ConnectionError, NewConnectionError, LocationParseError, HTTPError, InvalidURL):
 			print(f"\n{c.RED}[-] URL invalid!\n[-] Please wait...")
 			flag = 0
 			sleep(2)
