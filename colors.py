@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+# Colors
+
 BLACK = "\033[1;30m"
 RED = "\033[1;31m"
 GREEN = "\033[1;32m"
